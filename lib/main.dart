@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:turma5/screens/menu_screen.dart';
 import 'screens/personal_card_screen.dart';
 
 void main() {
@@ -16,7 +17,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PersonalCardScreen(),
+      initialRoute: '/menu',
+      routes: {
+        '/menu': (_) => const MenuScreen(),
+        '/personal-card': (_) => const PersonalCardScreen(),
+      }
     );
   }
 }

@@ -8,8 +8,25 @@ class PersonalCardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    final name = arguments?['name'];
+    final phone = arguments?['phone'];
+    final email = arguments?['email'];
+
     return Scaffold(
       backgroundColor: Colors.teal,
+      appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+          )),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -24,9 +41,9 @@ class PersonalCardScreen extends StatelessWidget {
               const SizedBox(
                 height: 32,
               ),
-              const Text(
-                'Marcelo Montanher',
-                style: TextStyle(
+              Text(
+                name ?? '',
+                style: const TextStyle(
                   fontFamily: 'Pacifico',
                   fontSize: 20,
                   color: Colors.white,
@@ -36,22 +53,22 @@ class PersonalCardScreen extends StatelessWidget {
               const SizedBox(height: 32),
               PersonalCardButton(
                 icon: Icons.phone,
-                text: '+55 11 99999-9999',
+                text: phone,
                 onPressed: () => launchUrl(
                   Uri(
                     scheme: 'tel',
-                    path: '+5511999999999',
+                    path: phone,
                   ),
                 ),
               ),
               const SizedBox(height: 16),
               PersonalCardButton(
                 icon: Icons.email,
-                text: 'teste@gmail.com',
+                text: email,
                 onPressed: () => launchUrl(
                   Uri(
                     scheme: 'mailto',
-                    path: 'teste@gmail.com',
+                    path: email,
                   ),
                 ),
               ),
