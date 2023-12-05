@@ -60,6 +60,39 @@ class MenuScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                child: Material(
+                  color: Colors.teal,
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(1000),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/dice',
+                      );
+                    },
+                    borderRadius: BorderRadius.circular(1000),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 16.0,
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Dado',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
