@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:turma5/screens/menu_screen.dart';
 import 'screens/dice_screen.dart';
+import 'screens/movies_screen.dart';
 import 'screens/personal_card_screen.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/menu': (_) => const MenuScreen(),
         '/personal-card': (_) => const PersonalCardScreen(),
         '/dice': (_) => const DiceScreen(),
+        '/movies': (_) => const MoviesScreen(),
       }
     );
   }
